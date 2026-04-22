@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>thewebgrowth | Get More Clients With a Premium Website in 5 Days</title>
+  <meta name="description" content="Bhopal's #1 website development agency. We build high-converting websites for local businesses in 3–5 days. Starting ₹6,999. Free consultation." />
+
+  <!-- Fonts: Sora (display) + Plus Jakarta Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════ */
+    :root {
+      --bg: #050810;
+      --bg-2: #080c18;
+      --surface: rgba(255,255,255,0.04);
+      --surface-hover: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.08);
+      --border-glow: rgba(99,102,241,0.4);
+      --text: #f1f5f9;
+      --text-muted: #8b94a9;
+      --text-dim: #4b5563;
+      --blue: #6366f1;
+      --blue-light: #818cf8;
+      --blue-dark: #4f46e5;
+      --violet: #8b5cf6;
+      --violet-light: #a78bfa;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --grad-main: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      --grad-text: linear-gradient(100deg, #818cf8 0%, #c4b5fd 100%);
+      --shadow-glow: 0 0 40px rgba(99,102,241,0.25);
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      cursor: default;
+    }
+
+    /* ── Noise Grain ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Ambient glows ── */
+    .ambient-1 {
+      position: fixed; top: -20%; left: -15%;
+      width: 55vw; height: 55vw;
+      background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 65%);
+      border-radius: 50%; pointer-events: none; z-index: 0;
+    }
+    .ambient-2 {
+      position: fixed; bottom: -20%; right: -15%;
+      width: 55vw; height: 55vw;
+      background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 65%);
+      border-radius: 50%; pointer-events: none; z-index: 0;
+    }
+    .ambient-3 {
+      position: fixed; top: 40%; left: 55%;
+      width: 30vw; height: 30vw;
+      background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 65%);
+      border-radius: 50%; pointer-events: none; z-index: 0;
+    }
+
+    /* ── Typography ── */
+    .font-display { font-family: 'Sora', sans-serif; }
+    .text-grad {
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Glass ── */
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* ── Gradient Button ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--grad-main);
+      color: #fff; font-weight: 700; font-family: 'Sora', sans-serif;
+      border: none; border-radius: 100px; cursor: pointer;
+      position: relative; overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-primary::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, #818cf8, #a78bfa);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.5); }
+    .btn-primary:hover::after { opacity: 1; }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-primary svg { position: relative; z-index: 1; transition: transform 0.25s; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-weight: 600; font-family: 'Sora', sans-serif;
+      border-radius: 100px; cursor: pointer; text-decoration: none;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .btn-ghost:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    /* ── Section label ── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--violet-light);
+      background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.25);
+      padding: 5px 14px; border-radius: 100px;
+    }
+
+    /* ── Reveal animations ── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Card hover ── */
+    .card-hover {
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      box-shadow: 0 16px 48px rgba(99,102,241,0.12);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 4px 10px; border-radius: 100px;
+      border: 1px solid;
+    }
+
+    /* ── Stars ── */
+    .star { color: #f59e0b; }
+
+    /* ═══════════════════════════════════════
+       MARQUEE
+    ═══════════════════════════════════════ */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 24s linear infinite; display: flex; width: max-content; }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    /* ═══════════════════════════════════════
+       FLOAT
+    ═══════════════════════════════════════ */
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+    @keyframes floatB { 0%,100%{ transform: translateY(0) rotate(-2deg); } 50%{ transform: translateY(-8px) rotate(2deg); } }
+    .float { animation: float 5s ease-in-out infinite; }
+    .float-b { animation: floatB 6s ease-in-out infinite; }
+
+    /* ═══════════════════════════════════════
+       PULSE DOT
+    ═══════════════════════════════════════ */
+    @keyframes ping { 0%{ transform: scale(1); opacity: .7; } 75%,100%{ transform: scale(2); opacity: 0; } }
+    .ping { animation: ping 1.5s ease-out infinite; }
+
+    /* ═══════════════════════════════════════
+       WHATSAPP FAB PULSE
+    ═══════════════════════════════════════ */
+    @keyframes waPulse { 0%{ transform: scale(1); opacity: .6; } 70%{ transform: scale(1.6); opacity: 0; } 100%{ transform: scale(1.6); opacity: 0; } }
+    .wa-pulse { animation: waPulse 2.2s ease-out infinite; }
+
+    /* ═══════════════════════════════════════
+       GRID BG
+    ═══════════════════════════════════════ */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 72px;
+      display: flex; align-items: center;
+      background: rgba(5,8,16,0.7);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #navbar.scrolled {
+      background: rgba(5,8,16,0.95);
+      box-shadow: 0 1px 24px rgba(0,0,0,0.5);
+    }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto; width: 100%;
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.15rem;
+      text-decoration: none; color: var(--text);
+    }
+    .logo-icon {
+      width: 32px; height: 32px;
+      background: var(--grad-main);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+
+    /* Mobile nav */
+    #hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    #hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+    #hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #hamburger.open span:nth-child(2) { opacity: 0; }
+    #hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: rgba(5,8,16,0.98); border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px); z-index: 99;
+      padding: 0; max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    #mobile-menu.open { display: block; max-height: 500px; padding: 20px 24px 28px; }
+    .mobile-links { display: flex; flex-direction: column; gap: 4px; margin-bottom: 20px; }
+    .mobile-links a {
+      padding: 12px 16px; font-size: 0.95rem; font-weight: 500;
+      color: var(--text-muted); text-decoration: none;
+      border-radius: 12px; transition: background 0.2s, color 0.2s;
+    }
+    .mobile-links a:hover { background: var(--surface); color: var(--text); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+      overflow: hidden;
+    }
+    #hero .grid-bg {
+      position: absolute; inset: 0; z-index: -1;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 40%, transparent 100%);
+    }
+
+    /* Hero orbs */
+    .hero-orb-1 {
+      position: absolute; top: 20%; left: 15%; width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none; filter: blur(40px);
+    }
+    .hero-orb-2 {
+      position: absolute; top: 30%; right: 10%; width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none; filter: blur(40px);
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 100px; padding: 8px 20px 8px 12px;
+      font-size: 0.8rem; font-weight: 600; color: var(--blue-light);
+      margin-bottom: 28px;
+    }
+    .hero-badge .dot-wrap {
+      position: relative; width: 8px; height: 8px;
+    }
+    .hero-badge .dot-core {
+      position: absolute; inset: 0; background: var(--blue-light); border-radius: 50%;
+    }
+    .hero-badge .dot-ring {
+      position: absolute; inset: 0; background: var(--blue-light); border-radius: 50%;
+    }
+
+    h1.hero-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      max-width: 900px;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 600px; line-height: 1.7;
+      margin: 0 auto 36px;
+    }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 8px 16px;
+      font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+    }
+    .trust-item svg { color: var(--green); flex-shrink: 0; }
+
+    /* Stats strip */
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 52px;
+      max-width: 680px; width: 100%;
+    }
+    .hero-stat {
+      padding: 22px 16px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem; font-weight: 800; color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 0.68rem; font-weight: 600;
+      color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* ═══════════════════════════════════════
+       SECTIONS SHARED
+    ═══════════════════════════════════════ */
+    section { position: relative; z-index: 1; }
+    .section-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    h2.section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 12px 0 16px;
+    }
+    .section-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+    /* ═══════════════════════════════════════
+       TICKER BAND
+    ═══════════════════════════════════════ */
+    #ticker-band {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.015);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin: 0 28px;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--text-muted); letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .ticker-dot { width: 4px; height: 4px; background: var(--violet-light); border-radius: 50%; flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════ */
+    #services { padding: 96px 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .service-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stag {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 4px 10px; border-radius: 100px; border: 1px solid;
+    }
+
+    /* ═══════════════════════════════════════
+       PROCESS
+    ═══════════════════════════════════════ */
+    #process { padding: 96px 0; background: var(--bg-2); }
+    .process-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+      position: relative;
+    }
+    .process-connector {
+      position: absolute; top: 32px; left: 12.5%; right: 12.5%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(99,102,241,0.4), rgba(139,92,246,0.4));
+      pointer-events: none;
+    }
+    .process-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .process-step:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+    .process-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 3rem; font-weight: 800;
+      color: rgba(255,255,255,0.04);
+      position: absolute; top: 12px; right: 20px;
+      line-height: 1; pointer-events: none;
+    }
+    .process-circle {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .process-step h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: 0.83rem; color: var(--text-muted); line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════
+       PORTFOLIO
+    ═══════════════════════════════════════ */
+    #portfolio { padding: 96px 0; }
+    .portfolio-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 48px; gap: 20px;
+    }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .project-thumb {
+      position: relative; height: 220px; overflow: hidden;
+    }
+    .project-thumb-inner {
+      position: absolute; inset: 12px;
+      background: #0a0e1a;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .browser-bar {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .browser-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .browser-url {
+      flex: 1; margin-left: 8px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: 0.65rem; color: rgba(255,255,255,0.3); font-family: monospace;
+    }
+    .project-img {
+      width: 100%; height: 160px; object-fit: cover; display: block;
+    }
+    .project-img-placeholder {
+      width: 100%; height: 160px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: rgba(255,255,255,0.1);
+    }
+    /* Hover overlay */
+    .project-thumb-overlay {
+      position: absolute; inset: 0;
+      background: rgba(5,8,16,0.7);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: 0;
+    }
+    .project-card:hover .project-thumb-overlay { opacity: 1; }
+    .project-live-badge {
+      position: absolute; top: 20px; right: 20px;
+      background: rgba(5,8,16,0.8); border: 1px solid rgba(34,197,94,0.4);
+      border-radius: 100px; padding: 4px 10px;
+      font-size: 0.65rem; font-weight: 700; color: var(--green);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .project-body { padding: 24px; }
+    .project-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .project-category {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      padding: 4px 10px; border-radius: 100px; border: 1px solid;
+    }
+    .project-year { font-size: 0.75rem; color: var(--text-dim); }
+    .project-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .project-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; }
+    .project-results {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding-top: 16px; border-top: 1px solid var(--border);
+    }
+    .result-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 5px 10px; border-radius: 8px;
+    }
+
+    /* ═══════════════════════════════════════
+       PRICING
+    ═══════════════════════════════════════ */
+    #pricing { padding: 96px 0; background: var(--bg-2); }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1000px; margin: 0 auto;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .pricing-card:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+    .pricing-card.popular {
+      background: rgba(99,102,241,0.06);
+      border-color: rgba(99,102,241,0.5);
+      transform: scale(1.03);
+      box-shadow: 0 0 50px rgba(99,102,241,0.15);
+    }
+    .pricing-card.popular:hover { transform: scale(1.03) translateY(-4px); }
+    .popular-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; font-weight: 700;
+      background: var(--grad-main);
+      color: #fff; padding: 5px 12px; border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .pricing-name {
+      font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.5rem; font-weight: 800; line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-sub { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 24px; }
+    .pricing-features { list-style: none; margin-bottom: 28px; }
+    .pricing-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.85rem; padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-muted);
+    }
+    .pricing-features li.active { color: var(--text); }
+    .pricing-features li:last-child { border-bottom: none; }
+    .check { color: var(--green); flex-shrink: 0; }
+    .cross { color: var(--text-dim); flex-shrink: 0; }
+    .pricing-note { text-align: center; margin-top: 32px; font-size: 0.85rem; color: var(--text-dim); }
+    .pricing-note a { color: var(--violet-light); }
+
+    /* ═══════════════════════════════════════
+       WHY US
+    ═══════════════════════════════════════ */
+    #why-us { padding: 96px 0; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .why-reasons { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .why-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      transition: border-color 0.3s;
+    }
+    .why-item:hover { border-color: var(--border-glow); }
+    .why-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .why-item h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.9rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .why-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .stats-mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .stat-block:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+    .stat-block-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.8rem; font-weight: 800; line-height: 1; margin-bottom: 6px;
+    }
+    .stat-block-label { font-size: 0.78rem; color: var(--text-dim); }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════ */
+    #testimonials { padding: 96px 0; background: var(--bg-2); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .tcard {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .tcard:hover { border-color: rgba(99,102,241,0.35); transform: translateY(-5px); }
+    .tcard-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+    .tcard-quote {
+      font-size: 0.875rem; color: #c4cdd8; line-height: 1.75;
+      margin-bottom: 20px; flex: 1;
+    }
+    .tcard-quote::before { content: '"'; font-size: 1.5rem; color: var(--blue-light); line-height: 0; vertical-align: -0.3em; margin-right: 4px; }
+    .tcard-footer {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 16px; border-top: 1px solid var(--border);
+    }
+    .tcard-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+    }
+    .tcard-name { font-size: 0.85rem; font-weight: 700; font-family: 'Sora', sans-serif; }
+    .tcard-biz { font-size: 0.75rem; color: var(--text-dim); }
+
+    /* ═══════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════ */
+    #faq { padding: 96px 0; }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    details.faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    details.faq-item[open] { border-color: rgba(99,102,241,0.3); }
+    details.faq-item summary {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 20px 24px; cursor: pointer; list-style: none; user-select: none;
+      font-size: 0.9rem; font-weight: 600;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    .faq-arrow { transition: transform 0.3s; flex-shrink: 0; color: var(--text-muted); }
+    details.faq-item[open] .faq-arrow { transform: rotate(180deg); }
+    .faq-body {
+      padding: 0 24px 20px;
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.75;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    @keyframes faqin { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    details[open] .faq-body { animation: faqin 0.3s ease; }
+
+    /* ═══════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════ */
+    #contact { padding: 96px 0; }
+    .contact-card {
+      background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(139,92,246,0.08) 100%);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 80px rgba(99,102,241,0.08);
+    }
+    .contact-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent);
+    }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 0; }
+    .contact-left { padding: 52px 48px; position: relative; }
+    .contact-right { padding: 52px 48px; background: rgba(255,255,255,0.02); border-left: 1px solid var(--border); }
+    .contact-left h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .contact-left p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
+    .contact-perks { display: flex; flex-direction: column; gap: 12px; }
+    .contact-perk {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.85rem; color: var(--text-muted);
+    }
+    .contact-perk svg { color: var(--green); flex-shrink: 0; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .form-field { margin-bottom: 12px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.875rem; color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-dim); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: rgba(99,102,241,0.5);
+      background: rgba(255,255,255,0.07);
+    }
+    .form-select { color: var(--text-muted); }
+    .form-select option { background: #080c18; }
+    .form-textarea { resize: none; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    #footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+      padding: 56px 0 0;
+    }
+    .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand-desc {
+      font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-top: 14px; max-width: 280px;
+    }
+    .footer-col h5 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.78rem; color: var(--text-dim);
+    }
+
+    /* ═══════════════════════════════════════
+       WHATSAPP FAB
+    ═══════════════════════════════════════ */
+    #wa-fab {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    }
+    #wa-fab a {
+      position: relative; display: flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: #22c55e; border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(34,197,94,0.4);
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    #wa-fab a:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(34,197,94,0.5); }
+    #wa-fab .wa-ring-el {
+      position: absolute; inset: 0;
+      background: #22c55e; border-radius: 50%;
+    }
+    #wa-fab svg { position: relative; z-index: 1; }
+    #wa-tooltip {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: #1e2433; border: 1px solid var(--border);
+      border-radius: 10px; padding: 8px 14px;
+      font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    #wa-fab:hover #wa-tooltip { opacity: 1; }
+
+    /* ═══════════════════════════════════════
+       STICKY MOBILE CTA
+    ═══════════════════════════════════════ */
+    #sticky-mobile {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(5,8,16,0.96); border-top: 1px solid var(--border);
+      padding: 12px 16px; z-index: 150;
+      transform: translateY(100%); transition: transform 0.4s ease;
+    }
+    #sticky-mobile.show { transform: translateY(0); }
+    .sticky-row { display: flex; gap: 10px; }
+    .sticky-wa {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: #22c55e; border-radius: 14px; padding: 14px;
+      font-weight: 700; font-size: 0.875rem; color: #fff;
+      text-decoration: none;
+    }
+    .sticky-cta {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      background: var(--grad-main); border-radius: 14px; padding: 14px;
+      font-weight: 700; font-size: 0.875rem; color: #fff;
+      text-decoration: none;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-connector { display: none; }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-right { display: none; }
+      #hamburger { display: flex; }
+      #sticky-mobile { display: block; }
+      #wa-fab { bottom: 88px; }
+
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-stat:nth-child(odd) { border-right: 1px solid var(--border); }
+      .hero-stat:nth-child(3), .hero-stat:nth-child(4) { border-bottom: none; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-header { flex-direction: column; align-items: flex-start; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .pricing-card.popular { transform: none; }
+      .pricing-card.popular:hover { transform: translateY(-4px); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-right { border-left: none; border-top: 1px solid var(--border); padding: 32px 24px; }
+      .contact-left { padding: 36px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .section-inner { padding: 0 20px; }
+      .footer-inner { padding: 0 20px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ambient-1"></div>
+<div class="ambient-2"></div>
+<div class="ambient-3"></div>
+
+<!-- ═══════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 14L7 9L11 13L16 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      thewebgrowth
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="https://wa.me/918461902705" target="_blank"
+        style="display:flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:#4ade80;text-decoration:none;padding:8px 12px;transition:color .2s"
+        onmouseover="this.style.color='#86efac'" onmouseout="this.style.color='#4ade80'">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsApp Us
+      </a>
+      <a href="#contact" class="btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">
+        <span>Get Free Quote</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <button id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu">
+  <nav class="mobile-links">
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#portfolio">Our Work</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div style="display:flex;gap:10px;">
+    <a href="https://wa.me/918461902705" target="_blank" class="sticky-wa" style="border-radius:12px;padding:12px 16px;">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp
+    </a>
+    <a href="#contact" class="sticky-cta" style="border-radius:12px;padding:12px 16px;">Get Free Quote</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ -->
+<section id="hero">
+  <div class="grid-bg"></div>
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+
+  <!-- Badge -->
+  <div class="hero-badge reveal visible">
+    <span class="dot-wrap">
+      <span class="dot-ring ping" style="background:var(--blue-light);opacity:.5"></span>
+      <span class="dot-core"></span>
+    </span>
+    🔥 Limited — 20% Off All Plans This Month
+  </div>
+
+  <!-- Headline -->
+  <h1 class="hero-title reveal visible">
+    Your Business Deserves a Website<br/>
+    That <span class="text-grad">Brings Real Clients</span>
+  </h1>
+
+  <p class="hero-sub reveal visible reveal-delay-1">
+    We build <strong style="color:var(--text);">premium, high-converting websites</strong> for local businesses in Bhopal —
+    delivered in <strong style="color:var(--text);">3–5 days</strong>, starting at just ₹6,999. No tech knowledge needed.
+  </p>
+
+  <!-- CTAs -->
+  <div class="reveal visible reveal-delay-2" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+    <a href="#contact" class="btn-primary" style="padding:16px 32px;font-size:0.95rem;">
+      <span>Get My Website Now</span>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+      </svg>
+    </a>
+    <a href="#portfolio" class="btn-ghost" style="padding:16px 28px;font-size:0.9rem;">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--blue-light)">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.972l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"/>
+      </svg>
+      See Our Work
+    </a>
+  </div>
+
+  <!-- Trust badges -->
+  <div class="hero-trust reveal visible reveal-delay-3">
+    <div class="trust-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+      3–5 Day Delivery
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+      No Tech Knowledge Needed
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+      Unlimited Revisions
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+      Free Consultation
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="hero-stats reveal visible reveal-delay-4">
+    <div class="hero-stat">
+      <div class="hero-stat-num"><span data-count="62">0</span>+</div>
+      <div class="hero-stat-label">Happy Clients</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">3–5<span style="font-size:1rem;color:var(--text-muted)">d</span></div>
+      <div class="hero-stat-label">Delivery Time</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">4.9<span style="font-size:1.4rem;color:var(--amber)">★</span></div>
+      <div class="hero-stat-label">Google Rating</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" style="font-size:1.4rem;">₹6,999</div>
+      <div class="hero-stat-label">Starting Price</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   TICKER
+═══════════════════════════════════════ -->
+<div id="ticker-band">
+  <div style="overflow:hidden">
+    <div class="marquee-track">
+      <span class="ticker-item"><span class="ticker-dot"></span>HTML5 & CSS3</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>React.js</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>WordPress</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Next.js</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>SEO Optimized</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Performance Focused</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Mobile First</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Tailwind CSS</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>WooCommerce</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Google Analytics</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>CRO Focused</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Schema Markup</span>
+      <!-- duplicate -->
+      <span class="ticker-item"><span class="ticker-dot"></span>HTML5 & CSS3</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>React.js</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>WordPress</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Next.js</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>SEO Optimized</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Performance Focused</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Mobile First</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Tailwind CSS</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>WooCommerce</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Google Analytics</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>CRO Focused</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Schema Markup</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════ -->
+<section id="services">
+  <div class="section-inner" style="padding-top:96px;padding-bottom:96px">
+    <div class="section-header reveal">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Everything Your Business<br/><span class="text-grad">Needs to Grow Online</span></h2>
+      <p class="section-desc">From design to launch — and beyond. We handle the tech, you handle your business.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="reveal service-card card-hover" style="border-radius:var(--radius-lg)">
+        <div class="service-icon" style="background:rgba(99,102,241,0.15)">
+          <svg width="22" height="22" fill="none" stroke="#818cf8" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/>
+          </svg>
+        </div>
+        <h3>Custom Website Design</h3>
+        <p>Pixel-perfect, tailor-made designs that reflect your brand identity, built to convert visitors into customers.</p>
+        <div class="service-tags">
+          <span class="stag" style="color:#818cf8;border-color:rgba(129,140,248,.3);background:rgba(129,140,248,.08)">UI/UX</span>
+          <span class="stag" style="color:#818cf8;border-color:rgba(129,140,248,.3);background:rgba(129,140,248,.08)">Branding</span>
+          <span class="stag" style="color:#818cf8;border-color:rgba(129,140,248,.3);background:rgba(129,140,248,.08)">CRO</span>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 service-card card-hover" style="border-radius:var(--radius-lg)">
+        <div class="service-icon" style="background:rgba(139,92,246,0.15)">
+          <svg width="22" height="22" fill="none" stroke="#a78bfa" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/>
+          </svg>
+        </div>
+        <h3>E-Commerce Stores</h3>
+        <p>Sell online 24/7 with a fully functional store — payment gateway, inventory management, and mobile-first checkout.</p>
+        <div class="service-tags">
+          <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.08)">WooCommerce</span>
+          <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.08)">Payments</span>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 service-card card-hover" style="border-radius:var(--radius-lg)">
+        <div class="service-icon" style="background:rgba(244,63,94,0.15)">
+          <svg width="22" height="22" fill="none" stroke="#fb7185" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5"/>
+          </svg>
+        </div>
+        <h3>Performance Marketing Pages</h3>
+        <p>CRO-optimised landing pages built for paid ads, product launches, and high-volume lead generation campaigns.</p>
+        <div class="service-tags">
+          <span class="stag" style="color:#fb7185;border-color:rgba(251,113,133,.3);background:rgba(251,113,133,.08)">CRO</span>
+          <span class="stag" style="color:#fb7185;border-color:rgba(251,113,133,.3);background:rgba(251,113,133,.08)">Google Ads</span>
+          <span class="stag" style="color:#fb7185;border-color:rgba(251,113,133,.3);background:rgba(251,113,133,.08)">Meta Ads</span>
+        </div>
+      </div>
+
+      <div class="reveal service-card card-hover" style="border-radius:var(--radius-lg)">
+        <div class="service-icon" style="background:rgba(34,197,94,0.12)">
+          <svg width="22" height="22" fill="none" stroke="#4ade80" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 10.607z"/>
+          </svg>
+        </div>
+        <h3>SEO & Local Search</h3>
+        <p>Get found on Google. We set up technical SEO, local citations, and schema markup so your business ranks on day one.</p>
+        <div class="service-tags">
+          <span class="stag" style="color:#4ade80;border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.08)">On-Page SEO</span>
+          <span class="stag" style="color:#4ade80;border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.08)">Local SEO</span>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 service-card card-hover" style="border-radius:var(--radius-lg)">
+        <div class="service-icon" style="background:rgba(245,158,11,0.12)">
+          <svg width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
+          </svg>
+        </div>
+        <h3>Brand Identity Design</h3>
+        <p>Logo, colour palette, typography, and a brand kit that makes your business look premium and trustworthy.</p>
+        <div class="service-tags">
+          <span class="stag" style="color:#fbbf24;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.08)">Logo</span>
+          <span class="stag" style="color:#fbbf24;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.08)">Brand Kit</span>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 service-card card-hover" style="border-radius:var(--radius-lg)">
+        <div class="service-icon" style="background:rgba(20,184,166,0.12)">
+          <svg width="22" height="22" fill="none" stroke="#2dd4bf" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+          </svg>
+        </div>
+        <h3>Social Media Management</h3>
+        <p>Consistent posting, eye-catching creatives, and growth strategies across Instagram, Facebook, and Google My Business.</p>
+        <div class="service-tags">
+          <span class="stag" style="color:#2dd4bf;border-color:rgba(45,212,191,.3);background:rgba(45,212,191,.08)">Instagram</span>
+          <span class="stag" style="color:#2dd4bf;border-color:rgba(45,212,191,.3);background:rgba(45,212,191,.08)">GMB</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════ -->
+<section id="process">
+  <div class="section-inner" style="padding-top:96px;padding-bottom:96px">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">Live in <span class="text-grad">3–5 Days.</span><br/>Here's Our Process.</h2>
+      <p class="section-desc">No long waits, no confusing back-and-forths. Just a smooth, fast path to your new website.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-connector"></div>
+
+      <div class="reveal process-step">
+        <div class="process-num">01</div>
+        <div class="process-circle" style="background:rgba(99,102,241,0.2)">
+          <svg width="20" height="20" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+          </svg>
+        </div>
+        <h4>Discovery Call</h4>
+        <p>30-minute call to understand your business, goals, target audience, and design preferences. Zero obligation.</p>
+      </div>
+
+      <div class="reveal reveal-delay-1 process-step">
+        <div class="process-num">02</div>
+        <div class="process-circle" style="background:rgba(139,92,246,0.2)">
+          <svg width="20" height="20" fill="none" stroke="#a78bfa" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/>
+          </svg>
+        </div>
+        <h4>Design & Prototype</h4>
+        <p>We create wireframes and visual mockups. You see exactly what your site will look like before we build anything.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2 process-step">
+        <div class="process-num">03</div>
+        <div class="process-circle" style="background:rgba(244,63,94,0.2)">
+          <svg width="20" height="20" fill="none" stroke="#fb7185" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+          </svg>
+        </div>
+        <h4>Build & Develop</h4>
+        <p>Clean, fast code with mobile-first approach, SEO foundations, and conversion elements baked in from the start.</p>
+      </div>
+
+      <div class="reveal reveal-delay-3 process-step">
+        <div class="process-num">04</div>
+        <div class="process-circle" style="background:rgba(34,197,94,0.2)">
+          <svg width="20" height="20" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+          </svg>
+        </div>
+        <h4>Launch & Support</h4>
+        <p>We go live, test across all devices, and provide 30 days of free post-launch support. Your success = our success.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   PORTFOLIO
+═══════════════════════════════════════ -->
+<section id="portfolio" style="padding:96px 0">
+  <div class="section-inner">
+    <div class="portfolio-header reveal">
+      <div>
+        <span class="section-label">Case Studies</span>
+        <h2 class="section-title" style="margin:12px 0 0">Our <span class="text-grad">Work</span></h2>
+      </div>
+      <p style="color:var(--text-muted);font-size:0.9rem;max-width:300px;line-height:1.7">Real projects. Real results. Built for clients across Bhopal and India.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- Project 1 -->
+      <div class="reveal project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">
+          <div class="project-thumb-inner">
+            <div class="browser-bar">
+              <div class="browser-dot" style="background:#ef4444"></div>
+              <div class="browser-dot" style="background:#f59e0b"></div>
+              <div class="browser-dot" style="background:#22c55e"></div>
+              <div class="browser-url">mehta-interiors.in</div>
+            </div>
+            <img src="Gemini_Generated_Image_obdwzpobdwzpobdw.png"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              class="project-img" alt="Mehta Interiors Website">
+            <div class="project-img-placeholder" style="display:none;background:linear-gradient(135deg,#1e1b4b,#312e81)">
+              <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-thumb-overlay">
+            <a href="#" class="btn-primary" style="padding:10px 20px;font-size:0.82rem;">
+              <span>View Live Site</span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </a>
+          </div>
+          <div class="project-live-badge"><span style="width:5px;height:5px;background:#22c55e;border-radius:50%;display:inline-block"></span> Live</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category" style="color:#818cf8;border-color:rgba(129,140,248,.3);background:rgba(129,140,248,.08)">Interior Design</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3>Mehta Interiors — Premium Studio Website</h3>
+          <p>Luxury portfolio with full-screen gallery, project case studies, and lead capture. Completely transformed their online presence.</p>
+          <div class="project-results">
+            <span class="result-badge" style="background:rgba(34,197,94,.1);color:#4ade80">🚀 3× More Leads</span>
+            <span class="result-badge" style="background:rgba(99,102,241,.1);color:#818cf8">⚡ 4 Days Delivery</span>
+            <span class="result-badge" style="background:rgba(245,158,11,.1);color:#fbbf24">★ 5-Star Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="reveal reveal-delay-1 project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#064e3b,#065f46)">
+          <div class="project-thumb-inner">
+            <div class="browser-bar">
+              <div class="browser-dot" style="background:#ef4444"></div>
+              <div class="browser-dot" style="background:#f59e0b"></div>
+              <div class="browser-dot" style="background:#22c55e"></div>
+              <div class="browser-url">spicetrail-restaurant.in</div>
+            </div>
+            <img src="Gemini_Generated_Image_p7qn3pt7qn3pt7q.png"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              class="project-img" alt="SpiceTrail Restaurant">
+            <div class="project-img-placeholder" style="display:none;background:linear-gradient(135deg,#064e3b,#065f46)">
+              <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-thumb-overlay">
+            <a href="#" class="btn-primary" style="padding:10px 20px;font-size:0.82rem;">
+              <span>View Live Site</span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </a>
+          </div>
+          <div class="project-live-badge"><span style="width:5px;height:5px;background:#22c55e;border-radius:50%;display:inline-block"></span> Live</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category" style="color:#4ade80;border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.08)">Restaurant</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3>SpiceTrail Restaurant — Online Menu + Booking</h3>
+          <p>Full-featured restaurant site with digital menu, table booking, and Google Maps integration. Huge jump in reservations.</p>
+          <div class="project-results">
+            <span class="result-badge" style="background:rgba(34,197,94,.1);color:#4ade80">📈 40% More Bookings</span>
+            <span class="result-badge" style="background:rgba(99,102,241,.1);color:#818cf8">⚡ 3 Days Delivery</span>
+            <span class="result-badge" style="background:rgba(245,158,11,.1);color:#fbbf24">★ 5-Star Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="reveal project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#3b0764,#4a044e)">
+          <div class="project-thumb-inner">
+            <div class="browser-bar">
+              <div class="browser-dot" style="background:#ef4444"></div>
+              <div class="browser-dot" style="background:#f59e0b"></div>
+              <div class="browser-dot" style="background:#22c55e"></div>
+              <div class="browser-url">sharmaclinic-bhopal.in</div>
+            </div>
+            <img src="Gemini_Generated_Image_w4uzb6w4uzb6w4uz.png"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              class="project-img" alt="Sharma Clinic">
+            <div class="project-img-placeholder" style="display:none;background:linear-gradient(135deg,#3b0764,#4a044e)">
+              <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-thumb-overlay">
+            <a href="#" class="btn-primary" style="padding:10px 20px;font-size:0.82rem;">
+              <span>View Live Site</span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </a>
+          </div>
+          <div class="project-live-badge"><span style="width:5px;height:5px;background:#22c55e;border-radius:50%;display:inline-block"></span> Live</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category" style="color:#c084fc;border-color:rgba(192,132,252,.3);background:rgba(192,132,252,.08)">Healthcare</span>
+            <span class="project-year">2024</span>
+          </div>
+          <h3>Sharma Clinic — Appointment Booking Website</h3>
+          <p>Medical website with appointment system, doctor profiles, and patient trust signals. Now ranks #1 on local Google search.</p>
+          <div class="project-results">
+            <span class="result-badge" style="background:rgba(34,197,94,.1);color:#4ade80">🏆 #1 Google Rank</span>
+            <span class="result-badge" style="background:rgba(99,102,241,.1);color:#818cf8">⚡ 5 Days</span>
+            <span class="result-badge" style="background:rgba(245,158,11,.1);color:#fbbf24">★ 5-Star Review</span>
+
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="reveal reveal-delay-1 project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#431407,#7c2d12)">
+          <div class="project-thumb-inner">
+            <div class="browser-bar">
+              <div class="browser-dot" style="background:#ef4444"></div>
+              <div class="browser-dot" style="background:#f59e0b"></div>
+              <div class="browser-dot" style="background:#22c55e"></div>
+              <div class="browser-url">royalacademy-bhopal.com</div>
+            </div>
+            <img src="Gemini_Generated_Image_sifpphsifpphsifp.png"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              class="project-img" alt="Royal Academy">
+            <div class="project-img-placeholder" style="display:none;background:linear-gradient(135deg,#431407,#7c2d12)">
+              <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-thumb-overlay">
+            <a href="#" class="btn-primary" style="padding:10px 20px;font-size:0.82rem;">
+              <span>View Live Site</span>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+              </svg>
+            </a>
+          </div>
+          <div class="project-live-badge"><span style="width:5px;height:5px;background:#22c55e;border-radius:50%;display:inline-block"></span> Live</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-category" style="color:#fb923c;border-color:rgba(251,146,60,.3);background:rgba(251,146,60,.08)">Education</span>
+            <span class="project-year">2025</span>
+          </div>
+          <h3>Royal Academy — Coaching Institute Landing Page</h3>
+          <p>High-converting landing page with admission form, success stories, and batch schedule. 200+ admissions in just 60 days.</p>
+          <div class="project-results">
+            <span class="result-badge" style="background:rgba(34,197,94,.1);color:#4ade80">🎓 200+ Admissions</span>
+            <span class="result-badge" style="background:rgba(99,102,241,.1);color:#818cf8">⚡ 3 Days</span>
+            <span class="result-badge" style="background:rgba(245,158,11,.1);color:#fbbf24">★ 5-Star Review</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════
+   PRICING
+═══════════════════════════════════════ -->
+<section id="pricing">
+  <div class="section-inner" style="padding-top:96px;padding-bottom:96px">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing Plans</span>
+      <h2 class="section-title">Transparent <span class="text-grad">Pricing.</span><br/>No Surprises.</h2>
+      <p class="section-desc">One-time payment. No monthly fees. No hidden charges. Just honest pricing.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="reveal pricing-card">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">₹6,999</div>
+        <div class="pricing-sub">Perfect for small businesses just getting started</div>
+        <a href="#contact" class="btn-ghost" style="width:100%;padding:13px;font-size:0.875rem;border-radius:12px;margin-bottom:24px;">Get Started</a>
+        <ul class="pricing-features">
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>5-Page Website</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Mobile Responsive</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Contact Form</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Basic SEO Setup</li>
+          <li><svg class="cross" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>Domain Not Included</li>
+          <li><svg class="cross" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>Hosting Not Included</li>
+        </ul>
+      </div>
+
+      <!-- Business — Popular -->
+      <div class="reveal reveal-delay-1 pricing-card popular">
+        <div class="popular-tag">
+          <svg width="11" height="11" fill="white" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          Most Popular
+        </div>
+        <div class="pricing-name" style="color:var(--blue-light)">Business</div>
+        <div class="pricing-price text-grad">₹9,999</div>
+        <div class="pricing-sub">Everything for a complete professional presence</div>
+        <a href="#contact" class="btn-primary" style="width:100%;padding:14px;font-size:0.9rem;border-radius:12px;margin-bottom:24px;"><span>Choose Business</span></a>
+        <ul class="pricing-features">
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Multi-page Website</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Premium UI Design</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Mobile Responsive</li>
+          <li class="active" style="color:var(--blue-light);font-weight:600"><svg class="check" width="15" height="15" fill="none" stroke="#4ade80" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Free Domain (1 Year) ✨</li>
+          <li class="active" style="color:var(--blue-light);font-weight:600"><svg class="check" width="15" height="15" fill="none" stroke="#4ade80" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Free Hosting (1 Year) ✨</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>SEO Foundations</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>30-Day Support</li>
+        </ul>
+      </div>
+
+      <!-- Premium -->
+      <div class="reveal reveal-delay-2 pricing-card">
+        <div class="pricing-name">Premium Brand</div>
+        <div class="pricing-price">₹14,999</div>
+        <div class="pricing-sub">The complete package for serious businesses</div>
+        <a href="#contact" class="btn-ghost" style="width:100%;padding:13px;font-size:0.875rem;border-radius:12px;margin-bottom:24px;">Choose Premium</a>
+        <ul class="pricing-features">
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Full Website Development</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Logo Design</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Visiting Card Design</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Complete Brand Kit</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Advanced SEO</li>
+          <li class="active"><svg class="check" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Priority 60-Day Support</li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="pricing-note reveal">All prices are one-time. No monthly fees. <a href="#contact">Need something custom? Let's talk →</a></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   WHY US
+═══════════════════════════════════════ -->
+<section id="why-us" style="padding:96px 0">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <span class="section-label reveal">Why Choose Us</span>
+        <h2 class="section-title reveal reveal-delay-1" style="margin:16px 0 12px">We Don't Just Build Websites.<br/><span class="text-grad">We Build Growth.</span></h2>
+        <p class="reveal reveal-delay-2" style="color:var(--text-muted);font-size:1rem;line-height:1.75;max-width:420px">Bhopal's businesses trust us because we combine sharp technical skills with a genuine understanding of what drives real business results.</p>
+        <div class="why-reasons">
+          <div class="reveal why-item">
+            <div class="why-icon" style="background:rgba(99,102,241,0.15)">
+              <svg width="18" height="18" fill="none" stroke="#818cf8" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            </div>
+            <div>
+              <h4>Lightning-Fast 3–5 Day Delivery</h4>
+              <p>You have a business to run. We don't keep you waiting for weeks. Fastest in Bhopal, without compromising quality.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-1 why-item">
+            <div class="why-icon" style="background:rgba(139,92,246,0.15)">
+              <svg width="18" height="18" fill="none" stroke="#a78bfa" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+            </div>
+            <div>
+              <h4>62+ Satisfied Clients & Counting</h4>
+              <p>From local shops to growing enterprises — our track record and 4.9★ Google rating speaks for itself.</p>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-2 why-item">
+            <div class="why-icon" style="background:rgba(34,197,94,0.12)">
+              <svg width="18" height="18" fill="none" stroke="#4ade80" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+            </div>
+            <div>
+              <h4>Built to Convert, Not Just Look Good</h4>
+              <p>Every element is placed with CRO principles in mind. Your website will be a 24/7 sales machine, not just a digital brochure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal stats-mosaic">
+        <div class="stat-block">
+          <div class="stat-block-num">62<span style="color:var(--violet-light)">+</span></div>
+          <div class="stat-block-label">Websites Delivered</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-num">4.9<span style="color:var(--amber)">★</span></div>
+          <div class="stat-block-label">Average Rating</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-num">3<span style="color:var(--blue-light)">×</span></div>
+          <div class="stat-block-label">Avg Lead Increase</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-num">5<span style="color:var(--green);font-size:1.4rem">d</span></div>
+          <div class="stat-block-label">Max Delivery Time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="section-inner" style="padding-top:96px;padding-bottom:96px">
+    <div class="section-header reveal">
+      <span class="section-label">Social Proof</span>
+      <h2 class="section-title">What Our <span class="text-grad">Clients Say</span></h2>
+      <p class="section-desc">Real words from real business owners in Bhopal and across India.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px">
+        <span style="color:var(--amber);font-size:1.2rem">★★★★★</span>
+        <span style="color:var(--text-muted);font-size:0.82rem">4.9/5 from 80+ Google Reviews</span>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="reveal tcard" style="display:flex;flex-direction:column">
+        <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tcard-quote">thewebgrowth delivered our clinic website in just 4 days. It looks incredibly professional and we've seen a 40% increase in appointment bookings since launch.</p>
+        <div class="tcard-footer">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">DS</div>
+          <div>
+            <div class="tcard-name">Dr. Sanjay Sharma</div>
+            <div class="tcard-biz">Sharma Multi-Speciality Clinic, Bhopal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 tcard" style="display:flex;flex-direction:column">
+        <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tcard-quote">I was skeptical about the price, but thewebgrowth proved every rupee was worth it. Our interior design portfolio site is stunning. Clients call it 'world-class'.</p>
+        <div class="tcard-footer">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#ec4899,#a855f7)">RM</div>
+          <div>
+            <div class="tcard-name">Ritu Mehta</div>
+            <div class="tcard-biz">Mehta Interiors Studio, Bhopal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 tcard" style="display:flex;flex-direction:column">
+        <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tcard-quote">Our coaching institute enrolled 200+ students in 60 days after the new website went live. The landing page converts like crazy. Best investment I've made.</p>
+        <div class="tcard-footer">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#f97316,#eab308)">VK</div>
+          <div>
+            <div class="tcard-name">Vikram Kumar</div>
+            <div class="tcard-biz">Royal Academy, Bhopal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal tcard" style="display:flex;flex-direction:column">
+        <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tcard-quote">Fantastic team! They understood our restaurant vibe perfectly. The online menu looks gorgeous and customers keep complimenting it. 40% more table bookings!</p>
+        <div class="tcard-footer">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#22c55e,#14b8a6)">AP</div>
+          <div>
+            <div class="tcard-name">Amit Patel</div>
+            <div class="tcard-biz">SpiceTrail Restaurant, Indore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 tcard" style="display:flex;flex-direction:column">
+        <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tcard-quote">I had a very tight deadline and budget. thewebgrowth not only delivered on time but exceeded expectations. The website feels ₹50,000+ but I paid ₹9,999.</p>
+        <div class="tcard-footer">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">NK</div>
+          <div>
+            <div class="tcard-name">Neha Khatri</div>
+            <div class="tcard-biz">NK Fashion Boutique, Bhopal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 tcard" style="display:flex;flex-direction:column">
+        <div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tcard-quote">The communication was impeccable. No ghosting, no delays. Just a clean, fast website that ranks on Google. Will definitely come back for more work.</p>
+        <div class="tcard-footer">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#ef4444,#ec4899)">RS</div>
+          <div>
+            <div class="tcard-name">Rahul Singh</div>
+            <div class="tcard-biz">Singh Electricals, Bhopal</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   FAQ
+═══════════════════════════════════════ -->
+<section id="faq" style="padding:96px 0">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Common <span class="text-grad">Questions</span></h2>
+      <p class="section-desc">Everything you need to know before getting started.</p>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item reveal">
+        <summary>
+          How long does it take to build my website?
+          <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="faq-body">Most websites are delivered in 3–5 business days. Complex e-commerce stores may take 7–10 days. We always provide a clear timeline before starting, and stick to it.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>
+          Do you provide hosting and domain?
+          <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="faq-body">Yes! Our Business Plan includes a free domain and 1 year of hosting. After the first year, renewal costs are very affordable (typically ₹2,500–₹4,000/year).</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>
+          Will my website rank on Google?
+          <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="faq-body">Every website we build includes technical SEO fundamentals — fast load speeds, proper meta tags, schema markup, and clean code. Ranking also depends on your content and local competition, but we give you the strongest possible foundation from day one.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>
+          Can I update the website content myself?
+          <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="faq-body">Absolutely. We can build on WordPress or provide a simple CMS so you can update text, images, and blog posts without any coding knowledge. No tech skills required.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>
+          What if I'm not happy with the design?
+          <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="faq-body">We offer unlimited revisions until you're 100% satisfied. We also show you a prototype before development starts — so there are absolutely no surprises at the end.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>
+          Do you work with businesses outside Bhopal?
+          <svg class="faq-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </summary>
+        <div class="faq-body">Yes! While we're based in Bhopal, we work with clients across India. Everything is handled remotely via WhatsApp and video calls — smooth, fast, and hassle-free.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ -->
+<section id="contact" style="padding:96px 0;background:var(--bg-2)">
+  <div class="section-inner">
+    <div class="contact-card reveal">
+      <div class="contact-inner">
+
+        <div class="contact-left">
+          <span class="section-label" style="margin-bottom:20px;display:inline-flex">Free Consultation</span>
+          <h2>Ready to Get Your<br/><span class="text-grad">Dream Website?</span></h2>
+          <p>Fill in the form and we'll reach out within 2 hours with a free quote — no commitments, no pressure.</p>
+          <div class="contact-perks">
+            <div class="contact-perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Free 30-minute consultation call
+            </div>
+            <div class="contact-perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              No hidden fees, transparent pricing
+            </div>
+            <div class="contact-perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Reply within 2 hours on WhatsApp
+            </div>
+            <div class="contact-perk">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Unlimited revisions until satisfied
+            </div>
+          </div>
+          <!-- Social proof mini -->
+          <div style="margin-top:32px;padding:20px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+              <div style="display:flex">
+                <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:2px solid var(--bg-2);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700">DS</div>
+                <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#ec4899,#a855f7);border:2px solid var(--bg-2);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700">RM</div>
+                <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f97316,#eab308);border:2px solid var(--bg-2);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700">VK</div>
+              </div>
+              <span style="color:var(--amber);font-size:0.8rem">★★★★★</span>
+            </div>
+            <p style="font-size:0.78rem;color:var(--text-muted)">Trusted by <strong style="color:var(--text)">62+ businesses</strong> across Bhopal and India</p>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="form-row">
+            <div>
+              <input class="form-input" type="text" id="fname" placeholder="Your Name" required />
+            </div>
+            <div>
+              <input class="form-input" type="tel" id="fphone" placeholder="WhatsApp Number" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <input class="form-input" type="text" id="fbiz" placeholder="Business Name / Type (e.g. Restaurant, Clinic)" />
+          </div>
+          <div class="form-field">
+            <select class="form-select" id="fplan">
+              <option value="" disabled selected>Which plan interests you?</option>
+              <option>Starter — ₹6,999</option>
+              <option>Business — ₹9,999 (Most Popular)</option>
+              <option>Premium Brand — ₹14,999</option>
+              <option>Custom / Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <textarea class="form-textarea" id="fmsg" rows="3" placeholder="Briefly describe what you need (optional)..."></textarea>
+          </div>
+          <button onclick="submitForm()" class="btn-primary" style="width:100%;padding:16px;font-size:0.95rem;border-radius:14px;margin-bottom:16px;">
+            <span>Send Message — Get Free Quote</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </button>
+          <div style="display:flex;align-items:center;gap:8px;justify-content:center">
+            <svg width="14" height="14" fill="#4ade80" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span style="font-size:0.78rem;color:var(--text-dim)">Or WhatsApp directly: <a href="https://wa.me/918461902705" style="color:#4ade80;text-decoration:none" target="_blank">+91 8461902705</a></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="nav-logo" style="text-decoration:none">
+          <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 14L7 9L11 13L16 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          thewebgrowth
+        </a>
+        <p class="footer-brand-desc">Bhopal's trusted website development agency. We build premium, high-converting websites for local businesses — fast, affordable, and results-driven.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Custom Websites</a></li>
+          <li><a href="#services">E-Commerce Stores</a></li>
+          <li><a href="#services">Landing Pages</a></li>
+          <li><a href="#services">SEO & Local Search</a></li>
+          <li><a href="#services">Brand Identity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#portfolio">Our Work</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">📍 Bhopal, Madhya Pradesh</a></li>
+          <li><a href="tel:+918461902705">📞 +91 8461902705</a></li>
+          <li><a href="mailto:thewebgrowth235@gmail.com">✉️ thewebgrowth235@gmail.com</a></li>
+          <li><a href="https://wa.me/918461902705" target="_blank" style="color:#4ade80">💬 Chat on WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 thewebgrowth. All rights reserved.</span>
+      <span>Made with ♥ in Bhopal, India</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════
+   WHATSAPP FAB
+═══════════════════════════════════════ -->
+<div id="wa-fab">
+  <a href="https://wa.me/918461902705?text=Hi!%20I%20need%20a%20website%20for%20my%20business." target="_blank" aria-label="Chat on WhatsApp">
+    <span class="wa-ring-el wa-pulse"></span>
+    <svg width="26" height="26" fill="white" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  <div id="wa-tooltip">Chat with us! 👋</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+   STICKY MOBILE CTA
+═══════════════════════════════════════ -->
+<div id="sticky-mobile">
+  <div class="sticky-row">
+    <a href="https://wa.me/918461902705" target="_blank" class="sticky-wa">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      WhatsApp
+    </a>
+    <a href="#contact" class="sticky-cta">Get Free Quote →</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+   JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+  /* ── Navbar scroll effect ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  }, { passive: true });
+
+  /* ── Mobile menu toggle ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  // Close on link click
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  /* ── Sticky mobile CTA ── */
+  const stickyCta = document.getElementById('sticky-mobile');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) stickyCta.classList.add('show');
+    else stickyCta.classList.remove('show');
+  }, { passive: true });
+
+  /* ── Scroll reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ── Counter animation ── */
+  function animateCount(el, target, duration = 1400) {
+    let start = null;
+    const step = (ts) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  }
+  const countEls = document.querySelectorAll('[data-count]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target, parseInt(e.target.dataset.count));
+        countObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  countEls.forEach(el => countObserver.observe(el));
+
+  /* ── Form submit ── */
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const biz = document.getElementById('fbiz').value.trim();
+    const plan = document.getElementById('fplan').value;
+    const msg = document.getElementById('fmsg').value.trim();
+
+    if (!name || !phone) {
+      alert('Please enter your name and WhatsApp number.');
+      return;
+    }
+
+    const waText = encodeURIComponent(
+      `Hi thewebgrowth! 👋\n\nName: ${name}\nPhone: ${phone}\nBusiness: ${biz || 'Not specified'}\nPlan: ${plan || 'Not selected'}\nMessage: ${msg || 'No message'}`
+    );
+    window.open(`https://wa.me/918461902705?text=${waText}`, '_blank');
+  }
+
+  /* ── Active nav highlight on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const activeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => {
+          const active = l.getAttribute('href') === '#' + e.target.id;
+          l.style.color = active ? '#f1f5f9' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => activeObs.observe(s));
+</script>
+
+</body>
+</html>
